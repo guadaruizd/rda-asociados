@@ -6,10 +6,6 @@ type LogoProps = {
   className?: string
 }
 
-/**
- * Espacio reservado para el logo principal del estudio.
- * Reemplazar el monograma SVG por `/public/logo.svg` o una imagen cuando esté listo.
- */
 export function Logo({ tone = 'dark', size = 'sm', className = '' }: LogoProps) {
   const markClass = [
     'logo-mark',
@@ -21,26 +17,14 @@ export function Logo({ tone = 'dark', size = 'sm', className = '' }: LogoProps) 
     .join(' ')
 
   return (
-    <div className={markClass} aria-label="RDA & Asociados — logo">
-      <div className="logo-frame" data-logo-slot>
-        {/* Sustituir este bloque por: <img src="/logo.svg" alt="RDA & Asociados" /> */}
-        <svg
-          className="logo-monogram"
-          viewBox="0 0 120 120"
-          role="img"
-          aria-hidden="true"
-        >
-          <circle cx="60" cy="60" r="56" className="logo-ring" />
-          <text
-            x="60"
-            y="68"
-            textAnchor="middle"
-            className="logo-letters"
-          >
-            RDA
-          </text>
-        </svg>
-      </div>
+    <div className={markClass}>
+      <img
+        className="logo-img"
+        src="/logo.png"
+        alt={size === 'lg' ? 'RDA & Asociados' : ''}
+        width={764}
+        height={537}
+      />
       {size === 'lg' ? null : (
         <span className="logo-wordmark">
           RDA <span className="logo-amp">&</span> Asociados

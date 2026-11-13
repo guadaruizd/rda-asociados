@@ -1,6 +1,21 @@
 import { useEffect, useRef } from 'react'
 import { site } from '../config/site'
 
+function ScalesMark() {
+  return (
+    <svg className="service__mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 2.4v16.6" />
+      <path d="M8.75 19h6.5" />
+      <path d="M7.25 21.4h9.5" />
+      <path d="M3.6 7.15h16.8" />
+      <path d="M6.15 7.15v3.35" />
+      <path d="M17.85 7.15v3.35" />
+      <path d="M3.1 11.05c.95 1.9 2.35 2.9 3.9 2.9s2.95-1 3.9-2.9" />
+      <path d="M13.1 11.05c.95 1.9 2.35 2.9 3.9 2.9s2.95-1 3.9-2.9" />
+    </svg>
+  )
+}
+
 export function Services() {
   const listRef = useRef<HTMLUListElement>(null)
 
@@ -32,6 +47,7 @@ export function Services() {
       aria-labelledby="services-title"
     >
       <div className="section__inner">
+        <div className="rise">
         <p className="section__eyebrow section__eyebrow--gold">Servicios</p>
         <h2 id="services-title" className="section__title section__title--light">
           Áreas de práctica
@@ -40,6 +56,7 @@ export function Services() {
           Defensa penal en Asunción y asesoría en otros fueros cuando el caso lo
           requiere.
         </p>
+        </div>
 
         <ul className="services__list" ref={listRef}>
           {site.services.map((service, index) => (
@@ -49,9 +66,9 @@ export function Services() {
               style={{ ['--delay' as string]: `${index * 70}ms` }}
             >
               <span className="service__index" aria-hidden="true">
-                {String(index + 1).padStart(2, '0')}
+                <ScalesMark />
               </span>
-              <h3 className="service__title">{service.title}</h3>
+              <h3 className="section__subtitle service__title">{service.title}</h3>
               <p className="service__text">{service.text}</p>
             </li>
           ))}

@@ -3,7 +3,7 @@ import { site, whatsappUrl } from '../config/site'
 
 const nav = [
   { href: '#estudio', label: 'El estudio' },
-  { href: '#quienes-somos', label: 'Quiénes somos' },
+  { href: '#profesionales', label: 'Profesionales' },
   { href: '#servicios', label: 'Servicios' },
   { href: '#contacto', label: 'Contacto' },
   { href: '#ubicacion', label: 'Ubicación' },

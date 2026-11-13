@@ -5,28 +5,29 @@
 export const site = {
   name: 'RDA & Asociados',
   legalName: 'Ruiz Díaz Ayala & Asoc. | Abogados',
-  tagline: 'Defensa penal y asesoría jurídica en Asunción',
+  tagline:
+    'Soluciones a la libertad y la justicia\nDefensa penal y asesoría jurídica',
   description:
     'Servicio de asesoría y consultoría jurídica en materia penal y otros fueros.',
-  email: 'consulta@rdaasociados.com.py',
-  /** Número internacional sin signos: código país + número (Paraguay: 595…) */
-  whatsappNumber: '595981000000',
-  whatsappDisplay: '+595 981 000 000',
+  email: 'jm_ruizdiaz@hotmail.com',
+  /** Celular corporativo. Internacional, sin signos: 595 + número sin el 0. */
+  whatsappNumber: '595981986716',
+  whatsappDisplay: '0981 986 716',
   address: {
     lines: ['Alejo García 1611', 'Asunción, Paraguay'],
     /** Listing the firm shared. Opens Google Maps. */
     mapsLink: 'https://maps.app.goo.gl/nvBe9CyTzdFKmzJB7',
-    /** Resolved embed for the same pin. Must stay inside an iframe. */
+    /** Satellite preview of the same pin. Must stay inside an iframe. */
     embedUrl:
-      'https://www.google.com/maps/embed?origin=mfe&pb=!1m12!1m8!1m3!1d7214.957398763042!2d-57.6583907!3d-25.2881125!3m2!1i1024!2i768!4f13.1!2m1!1sRuiz+D%C3%ADaz+Ayala+%26+Asoc.+%7C+Abogados!6i16!3m1!1ses!5m1!1ses',
+      'https://maps.google.com/maps?q=-25.2881125,-57.6583907&hl=es&z=18&t=k&output=embed',
   },
   /** Retrato y biografía provisionales — reemplazar antes de publicar. */
   lawyer: {
-    name: 'Abogado titular',
+    name: 'Juan María Ruiz Díaz Ayala',
     role: 'Socio principal',
     portrait: '/abogado-placeholder.jpg',
-    portraitAlt: 'Retrato provisional del abogado titular',
-    bio: 'Espacio reservado para una biografía breve: formación, trayectoria en defensa penal y la manera de acompañar a cada cliente.',
+    portraitAlt: 'Retrato provisional de Juan María Ruiz Díaz Ayala',
+    bio: 'Juan María Ruiz Díaz Ayala es el socio principal de RDA & Asociados, estudio de defensa penal y asesoría jurídica en Asunción. Acompaña a personas y familias desde las primeras actuaciones hasta el juicio oral y público, incluidas la excarcelación, las audiencias y la consulta en otros fueros cuando el caso lo requiere. Su trabajo se orienta a explicar cada etapa con claridad y a sostener una defensa técnica, seria y respetuosa de las garantías del debido proceso.',
   },
   services: [
     {
@@ -55,14 +56,13 @@ export const site = {
 export function whatsappUrl(message?: string): string {
   const text = encodeURIComponent(
     message ??
-      `Hola, deseo consultar con ${site.name} sobre un asunto jurídico.`,
+      `Hola, solicito asesoramiento con ${site.name} sobre un asunto jurídico.`,
   )
   return `https://wa.me/${site.whatsappNumber}?text=${text}`
 }
 
-export function mailtoUrl(): string {
-  const subject = encodeURIComponent(`Consulta — ${site.name}`)
-  return `mailto:${site.email}?subject=${subject}`
+export function mailtoUrl(subject = `Asesoramiento — ${site.name}`): string {
+  return `mailto:${site.email}?subject=${encodeURIComponent(subject)}`
 }
 
 export function mapsUrl(): string {

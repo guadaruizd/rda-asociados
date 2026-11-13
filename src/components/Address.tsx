@@ -4,11 +4,11 @@ export function Address() {
   return (
     <section
       id="ubicacion"
-      className="section section--ink address"
+      className="section section--dark address"
       aria-labelledby="address-title"
     >
       <div className="section__inner address__inner">
-        <div>
+        <div className="rise">
           <p className="section__eyebrow section__eyebrow--gold">Ubicación</p>
           <h2 id="address-title" className="section__title section__title--light">
             Estudio en Asunción
@@ -29,7 +29,7 @@ export function Address() {
             Ver en Maps
           </a>
         </div>
-        <figure className="address__map">
+        <figure className="address__map rise rise--late">
           <iframe
             title={`Mapa de ${site.legalName}`}
             src={site.address.embedUrl}
