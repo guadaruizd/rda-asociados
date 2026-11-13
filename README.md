@@ -1,2 +1,17 @@
-# rda-asociados
-Sitio web de RDA &amp; Asociados (Ruiz Díaz Ayala &amp; Asoc.), estudio jurídico de defensa penal en Asunción.
+# RDA & Asociados
+
+Sitio web del estudio jurídico **RDA & Asociados** (Asunción, Paraguay): defensa penal y asesoría jurídica.
+
+Stack: React + TypeScript + Vite. Alojado en CF Pages. 
+## Desarrollo
+
+```bash
+npm install
+npm run dev
+```
+
+```bash
+npm run build
+npm run preview
+```
+.
